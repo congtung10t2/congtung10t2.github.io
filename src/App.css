@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --bg: #f3f5f9; --surface: #fff; --ink: #16202f; --muted: #566176;
+  --line: #d9dfea; --accent: #2f4bff; --accent-ink: #fff;
 }
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: dark; --bg: #0f1624; --surface: #172033; --ink: #e9eef8; --muted: #9aa6bd; --line: #2a3550; --accent: #7f93ff; --accent-ink: #0f1624; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 17px/1.6 Figtree, system-ui, sans-serif; }
+h1, h2, h3 { font-family: "Bricolage Grotesque", Georgia, sans-serif; line-height: 1.05; margin: 0; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+header.top { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
+.brand { font: 800 20px "Bricolage Grotesque", sans-serif; }
+nav a { color: var(--muted); text-decoration: none; margin-left: 22px; font-weight: 500; }
+nav a:hover, nav a:focus-visible { color: var(--accent); }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.hero { padding: 56px 0 40px; }
+.hero h1 { font-size: clamp(44px, 9vw, 104px); font-weight: 800; letter-spacing: -0.035em; max-width: 11em; }
+.hero p { max-width: 34em; color: var(--muted); font-size: 20px; margin: 24px 0 0; }
+.stack { display: flex; gap: 10px; margin-top: 36px; flex-wrap: wrap; }
 
-.App-link {
-  color: #61dafb;
-}
+.chip { font: 600 15px Figtree, sans-serif; padding: 9px 18px; border-radius: 999px; border: 1.5px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.chip:focus-visible, .card:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; padding: 8px 0 72px; }
+.card { all: unset; display: block; cursor: pointer; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.cover { height: 190px; }
+.cover.logo { display: flex; align-items: center; justify-content: center; background: var(--bg); }
+.cover.logo img { max-width: 70%; max-height: 80%; object-fit: contain; border-radius: 12px; }
+.cbody { padding: 18px 20px 22px; }
+.cbody h3 { font-size: 24px; font-weight: 700; }
+.cbody p { margin: 8px 0 14px; color: var(--muted); font-size: 15.5px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.tags span { font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 6px; background: var(--bg); color: var(--muted); }
+
+dialog { border: 1px solid var(--line); border-radius: 18px; padding: 0; max-width: 640px; width: calc(100% - 32px); background: var(--surface); color: var(--ink); }
+dialog::backdrop { background: rgba(10, 15, 28, 0.6); }
+dialog .cover { height: 230px; }
+.dbody { padding: 26px 28px 30px; }
+.dbody h2 { font-size: 38px; font-weight: 800; letter-spacing: -0.02em; }
+.dbody dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 20px; margin: 20px 0; }
+.dbody dt { color: var(--muted); font-weight: 600; }
+.dbody dd { margin: 0; }
+.btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+.btn { font: 600 16px Figtree, sans-serif; padding: 11px 20px; border-radius: 10px; border: 1.5px solid var(--accent); background: var(--accent); color: var(--accent-ink); text-decoration: none; cursor: pointer; }
+.btn.alt { background: transparent; color: var(--accent); }
+
+.about { background: var(--surface); border-top: 1px solid var(--line); padding: 64px 0; }
+.about h2 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -0.025em; max-width: 14em; }
+.about p { max-width: 36em; color: var(--muted); margin: 18px 0 28px; }
+footer { padding: 28px 0 36px; color: var(--muted); font-size: 15px; }
+
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
