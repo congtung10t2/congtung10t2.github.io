@@ -126,8 +126,11 @@ export default function App() {
         <div className="wrap">
           <h2>Want to work together?</h2>
           <p>I build and maintain iOS apps, and I’m happy to talk about navigation, audio streaming, AI features or architecture.</p>
-          <a className="btn" href="https://github.com/congtung10t2" target="_blank" rel="noopener noreferrer">See my GitHub</a>
-           <a className="btn" href="https://www.linkedin.com/in/hoangcongtung" target="_blank" rel="noopener noreferrer">Connect with me on LinkedIn</a>
+    
+          <div className="btns">
+            <a className="btn" href="https://github.com/congtung10t2" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a className="btn alt" href="https://www.linkedin.com/in/hoangcongtung" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
       </section>
 
