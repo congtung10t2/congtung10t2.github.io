@@ -1,5 +1,6 @@
 {
-  "name": "my-portfolio",
+  "homepage": "https://congtung10t2.github.io/PortfolioWebsite",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
