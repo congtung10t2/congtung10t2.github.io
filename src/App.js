@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import projects from "./projects";
 import "./App.css";
 
+const NAME = "Hoang Cong Tung"; // change to how you want your name shown
+
 const categories = ["All", ...new Set(projects.map((p) => p.cat))];
 
 const gradient = (p) => ({
@@ -88,8 +90,8 @@ export default function App() {
   return (
     <>
       <div className="wrap">
-        <header className="top">
-          <div className="brand">congtung10t2</div>
+        <header className="top" id="top">
+          <div className="brand">{NAME}</div>
           <nav>
             <a href="#work">Work</a>
             <a href="#about">About</a>
@@ -126,7 +128,6 @@ export default function App() {
         <div className="wrap">
           <h2>Want to work together?</h2>
           <p>I build and maintain iOS apps, and I’m happy to talk about navigation, audio streaming, AI features or architecture.</p>
-    
           <div className="btns">
             <a className="btn" href="https://github.com/congtung10t2" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a className="btn alt" href="https://www.linkedin.com/in/hoangcongtung" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -135,7 +136,13 @@ export default function App() {
       </section>
 
       <div className="wrap">
-        <footer>© {new Date().getFullYear()} congtung10t2</footer>
+        <footer className="foot">
+          <div>
+            <span> 18 years of programming experience, 9 years of experience as a Senior iOS Developer </span>
+               <small>© {new Date().getFullYear()} {NAME}</small>
+          </div>
+        
+        </footer>
       </div>
 
       <ProjectDialog project={selected} onClose={() => setSelected(null)} />
