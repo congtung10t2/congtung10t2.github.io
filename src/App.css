@@ -50,6 +50,115 @@ dialog .cover { height: 230px; }
 .btn { font: 600 16px Figtree, sans-serif; padding: 11px 20px; border-radius: 10px; border: 1.5px solid var(--accent); background: var(--accent); color: var(--accent-ink); text-decoration: none; cursor: pointer; }
 .btn.alt { background: transparent; color: var(--accent); }
 
+.anniversary {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding: 64px 0;
+  text-align: center;
+}
+.anniversary-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.anniversary h2 {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+.anniversary-names {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: "Bricolage Grotesque", sans-serif;
+  margin: 16px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.anniversary-names .name {
+  color: var(--ink);
+}
+.anniversary-names .amp {
+  color: var(--accent);
+  font-size: 32px;
+}
+.anniversary-dates {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 12px 0 0;
+  letter-spacing: 0.02em;
+}
+.anniversary-message {
+  max-width: 30em;
+  color: var(--muted);
+  margin: 20px auto 0;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.anniversary-visual {
+  margin-top: 12px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.heart {
+  display: inline-flex;
+  animation: pulse 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(47, 75, 255, 0.4));
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+.floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.float-heart {
+  position: absolute;
+  bottom: 0;
+  font-size: 18px;
+  color: var(--accent);
+  opacity: 0;
+  animation: floatUp 4s ease-in infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(0.6); opacity: 0; }
+  20% { opacity: 0.7; }
+  80% { opacity: 0.3; }
+  100% { transform: translateY(-120px) scale(1.2); opacity: 0; }
+}
+.play-song {
+  margin-top: 28px;
+  font-size: 16px;
+  padding: 12px 24px;
+}
+.anniversary-full {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0 64px;
+}
+.anniversary-page {
+  min-height: 100vh;
+  background: var(--bg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .heart { animation: none; }
+  .float-heart { animation: none; opacity: 0; }
+}
+
 .about { background: var(--surface); border-top: 1px solid var(--line); padding: 64px 0; }
 .about h2 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; letter-spacing: -0.025em; max-width: 14em; }
 .about p { max-width: 36em; color: var(--muted); margin: 18px 0 28px; }

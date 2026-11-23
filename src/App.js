@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import projects from "./projects";
 import "./App.css";
 
@@ -94,6 +95,7 @@ export default function App() {
           <div className="brand">{NAME}</div>
           <nav>
             <a href="#work">Work</a>
+            <Link to="/anniversary">Anniversary</Link>
             <a href="#about">About</a>
           </nav>
         </header>
